@@ -1,3 +1,9 @@
+![模块图片](./imgs/爬虫基础.png)
+
+
+
+
+
 # requests 模块
 
 模块安装
@@ -139,6 +145,8 @@ pip install bs4
 from bs4 import BeautifuSoup
 ```
 
+**使用**
+
 ```python
 bhtml = BeautifuSoup("html文本")
 
@@ -164,7 +172,7 @@ pip install pyquery
 from pyquery import pyQuery
 ```
 
-使用
+**使用**
 
 ```python
 phtml = pyQuery(html)
@@ -177,7 +185,7 @@ p("#qq").text() #获取文本
 p("h3").html() 	#获取html
 ```
 
-选择器
+**选择器**
 
 ```python
 p("li a") 			#如果 a有多个，默认拿第一个
@@ -186,7 +194,7 @@ p("li a").items() 	#拿到多个a , 迭代器
 p("li a").eq(n) 	#得到第n个
 ```
 
-添加内容
+**添加内容**
 
 ```python
 p("div .aaa").after("""<div class='ccc'>你好</div>""")   #.aaa同级后面添加一个html标签
