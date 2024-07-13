@@ -19,25 +19,6 @@ datetime.now().timestamp() * 1000 # timestamp 当前时间秒值
 
 
 
-### getTime()实现
-
-```js
- var t = (e ? new Date(e) : new Date).getTime().toString(36)
-              , r = Math.random().toString(36).replace(/^0./, "");
-            return "".concat(t, "_").concat(r)
-
-
-new Date()
-
-datetime().
-```
-
-
-
-
-
-
-
 # 进制转换
 
 转36进制
