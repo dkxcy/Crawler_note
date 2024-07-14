@@ -105,5 +105,41 @@ p2 = Process(target=fn2, args=(q,))
 
 # 协程
 
-asyncio
+asyncio 协程模块
+
+```python 
+# asyncio 异步模块  aiohttp异步请求 aiofiles异步存储
+pip install asyncio aiohttp aiofiles
+
+async def download_ts(url):
+
+    try:
+        session = aiohttp.ClientSession()    
+        resp = session.get(url, timeout=200)
+        content = await resp.content.read()
+        
+        f = aiofiles.open("1.ts", mode="wb")
+        await f.write(content)
+    except:
+        print("错误")
+    	
+
+async def run():
+	tasks = []
+	for item in urls:
+	
+		task = asyncio.createtask(download_ts)
+        tasks.append(task)
+
+	await asyncio.wait(tasks)
+    
+    # result = await asyncio.gather(*tasks)结果会返回到result 
+    # return result
+
+if __name__ == '__main__':
+
+    result = asyncio.run(run())
+    print(result)
+
+```
 
