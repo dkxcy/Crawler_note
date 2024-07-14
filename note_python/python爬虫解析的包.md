@@ -28,6 +28,81 @@ resp.text
 
 
 
+Cookie反爬
+
+```
+从网页中 获取cookie 
+
+headers= {Cookie: "cookie字段"}
+ # 每次请求请求头都要带上 cookie
+requests.get("url地址"， headers=headers)
+```
+
+Referer反爬
+
+```
+headers ={
+   Referer: "当前发起请求的网址"
+}
+```
+
+
+
+Proxy代理
+
+```
+proxy = {
+	"http": "http://218.87.205.147:21359",
+	"https": "http://218.87.205.147:21359"
+}
+
+# 发起请求,通过代理
+requests.get(url, proxies=proxy)
+
+
+# 代理工具
+def get_proxies():
+	lis = ["请求代理地址"]
+	for proxy in lis:
+	
+		yield {
+			"http": f"http://{proxy}",
+			"https": f"https://{proxy}"
+		}
+
+ips = get_proxies()
+
+next(ips) #获取一条代理
+```
+
+
+
+
+
+
+
+
+
+## session会话请求
+
+
+
+```
+# seesion会携带之前的cookie
+
+# 发起登录, 登录成功会记录返回的cookie, 就不用手动写cookie了
+se = session.post("www.17xiaoshuo.com", data={user: "123", pwd="132"}) #
+
+# 后续发起请求, 都会携带这个cookie
+se.post("url地址")
+se.get("url地址")
+
+```
+
+
+
+
+
 
 
 # 数据解析

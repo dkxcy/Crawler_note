@@ -1,3 +1,61 @@
+
+
+
+
+# pyExecJS模块
+
+pyexecjs 可以帮助我们运行js代码的第三方模块
+
+使用场景
+
+* 没有第三方js
+* 主要是原生态js内容的 js
+
+
+
+前提: 安装 nodejs
+
+然后
+
+```python
+# pip install pyexecjs
+import execjs
+
+# print(execjs.get().name)
+
+# eval 执行一个js函数
+# ret = execjs.eval("""
+#     (function(){
+#         return 1
+#     })()
+# """)
+
+
+# print(ret)
+
+# js脚本
+js = """
+function fn(a, b){
+    return a + b
+}
+"""
+
+# 绑定js脚本
+a = execjs.compile(js)
+# 执行js的 fn函数 , 其实a 就类似于 js的 window  fn 就是 window.fn(10, 20)
+resu = a.call("fn", 10, 20)
+
+print(resu)
+```
+
+
+
+
+
+
+
+
+
 # 关于时间模块
 
 ### 
