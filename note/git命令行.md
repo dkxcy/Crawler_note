@@ -13,5 +13,8 @@ git pull # 提交之前要pull
 git push #提交到远程仓库
 
 # git remote add  远程仓库名 远程仓库的URL    # 如果需要就写
+
+
+# git rm -r fooldername #删除文件夹,包含里面所有内容
 ```
 
